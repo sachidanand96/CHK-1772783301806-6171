@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Background Information</title>
+    <link rel="stylesheet" href="simple.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Background Information</h1>
+        <p>Please provide some basic information so our system can analyze mental health patterns.</p>
+
+        <form id="backgroundForm">
+            <div>
+                <label>1. Profession:</label><br>
+                <input type="text" id="profession" required>
+            </div>
+            <br>
+            <div>
+                <label>2. Average working hours per day:</label><br>
+                <input type="number" id="workHours" required>
+            </div>
+            <br>
+            <div>
+                <label>3. Childhood trauma:</label><br>
+                <input type="radio" name="trauma" value="Yes" required> Yes
+                <input type="radio" name="trauma" value="No"> No
+            </div>
+            <br>
+            <div>
+                <label>4. Experienced harassment:</label><br>
+                <input type="radio" name="harassment" value="Yes" required> Yes
+                <input type="radio" name="harassment" value="No"> No
+            </div>
+            <br>
+            <div>
+                <label>5. Additional details:</label><br>
+                <textarea id="details" rows="4" cols="35"></textarea>
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('backgroundForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent page reload
+            alert('Form submitted successfully! Connecting to mental health prediction system...');
+            // Redirects to the main dashboard we built earlier
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>

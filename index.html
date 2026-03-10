@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for beautiful charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-box">
+                    <i class="fa-solid fa-head-side-virus logo-icon"></i>
+                </div>
+                <div class="logo-text">
+                    <h2>MindCare AI</h2>
+                    <span>MENTAL WELLNESS</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-target="chat">
+                    <i class="fa-regular fa-comments"></i>
+                    <span>AI Therapy Chat</span>
+                </li>
+                <li class="nav-item" data-target="progress">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span>My Progress</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-small">
+                    <img src="https://i.pravatar.cc/150?img=47" alt="User" class="avatar-round" id="user-avatar">
+                    <div class="user-details">
+                        <span class="name" id="user-name">Sarah Mitchell</span>
+                        <span class="plan" id="user-email"
+                            style="text-transform: lowercase;">sarah.mitchell@example.com</span>
+                    </div>
+                    <i class="fa-solid fa-gear settings-icon" id="settings-btn"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="page-title">Welcome back, Sarah Mitchell</h1>
+                    <p id="page-subtitle"><span class="dot-blue"></span> YOUR DAILY WELLNESS PARTNER</p>
+                </div>
+                <div class="header-actions">
+                    <div class="notification-btn">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="page-heading">
+                    <div class="heading-text">
+                        <h2 id="dashboard-heading">Dashboard</h2>
+                        <p>Nurture your body and mind with guided sessions tailored for you.</p>
+                    </div>
+                    <div class="heading-actions">
+
+                    </div>
+                </div>
+
+                <div class="main-grid">
+                    <!-- Left Column -->
+                    <div class="left-column">
+                        <!-- Yoga Cards -->
+                        <div class="yoga-row">
+                            <!-- Card 1 -->
+                            <div class="yoga-card">
+                                <div class="yoga-image-area hatha-bg">
+                                    <span class="badge white-badge"></span>
+                                </div>
+                                <div class="yoga-content">
+                                    <h3>Surya Namaskar</h3>
+                                    <p>15 mins • Focus on body stretching</p>
+                                    <div class="yoga-footer">
+                                        <div class="circles">
+                                            <div class="circle c-lightgreen"></div>
+                                            <div class="circle c-lightblue"></div>
+                                        </div>
+                                        <button class="play-btn start-exercise-btn" data-time="900" data-type="hatha">
+                                            <a href="https://youtu.be/YAq_oCjnkWY?si=wB_t1_35ea3E9Cqt" target="_blank">
+                                                <i class="fa-solid fa-play"></i></a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="yoga-card">
+                                <div class="yoga-image-area vinyasa-bg">
+                                    <span class="badge white-badge"></span>
+                                </div>
+                                <div class="yoga-content">
+                                    <h3>Meditation</h3>
+                                    <p>20 mins • Reduce Mental Stress</p>
+                                    <div class="yoga-footer">
+                                        <div class="circles">
+                                            <div class="circle c-teal"></div>
+                                            <div class="circle c-darkgreen"></div>
+                                        </div>
+                                        <button class="play-btn start-exercise-btn" data-time="1200"
+                                            data-type="vinyasa">
+                                            <a href="https://youtu.be/8ln4XfRi6uw?si=rDiVFAm30mnNmxRW" target="_blank">
+                                                <i class="fa-solid fa-play"></i></a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="yoga-card">
+                                <div class="yoga-image-area restorative-bg">
+                                    <span class="badge white-badge"></span>
+                                </div>
+                                <div class="yoga-content">
+                                    <h3>Body Alignment</h3>
+                                    <p>10 mins • Focus on proper posture</p>
+                                    <div class="yoga-footer">
+                                        <div class="circles">
+                                            <div class="circle c-teal"></div>
+                                            <div class="circle c-lightgray"></div>
+                                        </div>
+                                        <button class="play-btn start-exercise-btn" data-time="1800"
+                                            data-type="restorative">
+                                            <a href="https://youtu.be/ryaTUVNNZyg?si=d2u4Ls-ed8ON7DKp" target="_blank">
+                                                <i class="fa-solid fa-play"></i></a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Cards -->
+                        <div class="bottom-row">
+                            <!-- AI Therapy -->
+                            <div class="dashboard-card border-card ai-preview-card">
+                                <div class="card-header-flex">
+                                    <h3>AI Therapy Chat</h3>
+                                    <span class="status-online"><span class="dot-green"></span> ONLINE</span>
+                                </div>
+                                <div class="chat-bubble-preview">
+                                    <p id="dynamic-ai-text">"Hi Sarah, I noticed you were feeling a bit neutral today.
+                                        Would you like to try a 2-minute grounding exercise?"</p>
+                                </div>
+                                <button class="btn btn-primary full-width"
+                                    onclick="document.querySelector('.nav-item[data-target=\'chat\']').click()">
+                                    <i class="fa-solid fa-comment-dots"></i> Start New Session
+                                </button>
+                            </div>
+
+                            <!-- Health Assistant -->
+                            <div class="dashboard-card dark-card health-assistant">
+                                <h3>Health Assistant</h3>
+                                <p>Book a session with a licensed counselor or talk to your primary assistant.</p>
+                                <div class="health-footer">
+                                    <div class="avatar-stack">
+                                        <img src="https://i.pravatar.cc/150?img=5" alt="user" class="stack-img">
+                                        <img src="https://i.pravatar.cc/150?img=11" alt="user" class="stack-img">
+                                        <span class="stack-more">+14</span>
+                                    </div>
+                                    <button class="btn btn-white" id="book-assistant-btn">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="right-column">
+                        <!-- Mood Tracker -->
+                        <div class="dashboard-card mood-card shadow-card">
+                            <h3>How are you feeling?</h3>
+                            <p class="subtitle">Track your daily emotional status.</p>
+
+                            <div class="mood-selectors">
+                                <div class="mood-item">
+                                    <button class="mood-btn" data-mood="Terrible">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f62b.png"
+                                            alt="Terrible">
+                                    </button>
+                                    <span>TERRIBLE</span>
+                                </div>
+                                <div class="mood-item">
+                                    <button class="mood-btn" data-mood="Bad">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f641.png"
+                                            alt="Bad">
+                                    </button>
+                                    <span>BAD</span>
+                                </div>
+                                <div class="mood-item">
+                                    <button class="mood-btn selected" data-mood="Neutral">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f610.png"
+                                            alt="Neutral">
+                                    </button>
+                                    <span>NEUTRAL</span>
+                                </div>
+                                <div class="mood-item">
+                                    <button class="mood-btn" data-mood="Good">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f642.png"
+                                            alt="Good">
+                                    </button>
+                                    <span>GOOD</span>
+                                </div>
+                                <div class="mood-item">
+                                    <button class="mood-btn" data-mood="Amazing">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2728.png"
+                                            alt="Amazing" style="filter: hue-rotate(45deg);">
+                                    </button>
+                                    <span>AMAZING</span>
+                                </div>
+                            </div>
+                            <p id="mood-feedback" class="feedback-text hidden"></p>
+                        </div>
+
+                        <!-- Mood Trend -->
+                        <div class="dashboard-card chart-card shadow-card">
+                            <div class="card-header-flex">
+                                <h3>7-Day Mood Trend</h3>
+                                <span class="badge purple-badge">+12% Stability</span>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="moodBarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- AI Therapy Chat Section -->
+            <section id="chat" class="content-section">
+                <div class="chat-container card shadow-card">
+                    <!-- Crisis Alert Card (Hidden by default) -->
+                    <div id="crisis-alert" class="crisis-alert hidden">
+                        <div class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                        <div class="alert-content">
+                            <h4>Crisis Alert Detected</h4>
+                            <p>We care about you. You are not alone. Please reach out for professional help.</p>
+                            <div class="helpline-info">
+                                <strong>Crisis Helpline:</strong>
+                                <a href="tel:988">988</a> (US)
+                            </div>
+                        </div>
+                        <button id="close-alert" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="chat-header">
+                        <div class="chat-title">
+                            <div class="ai-avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div>
+                                <h3>MindCare AI Assistant</h3>
+                                <span class="status-indicator"></span><span class="status-text">Online</span>
+                            </div>
+                        </div>
+                        <div class="sentiment-badge">
+                            <span class="label">Detected Sentiment:</span>
+                            <span id="current-sentiment" class="badge neutral">Neutral</span>
+                        </div>
+                    </div>
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="message ai-message">
+                            <div class="message-content">Hello Sarah, I'm your MindCare AI assistant. How are you
+                                feeling today? Need someone to talk to?</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Type your message here..." autocomplete="off">
+                        <button id="send-chat-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Progress Section -->
+            <section id="progress" class="content-section">
+                <div class="dashboard-card shadow-card">
+                    <h3>Detailed Progress</h3>
+                    <p>Review your historical mental wellness journey.</p>
+                    <div class="history-list card" id="mood-history-list">
+                        <!-- History items injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Assistant</h3>
+                <button class="close-btn" id="close-booking"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="doctor-select">Select Doctor:</label>
+                        <select id="doctor-select" class="form-control" required
+                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #E2E8F0; background-color: var(--bg-color); color: var(--text-color); font-family: inherit;">
+                            <option value="" disabled selected>Choose a specialist</option>
+                            <option value="Dr. Sarah Jenkins">Dr. Sarah Jenkins (Clinical Psychologist)</option>
+                            <option value="Dr. Mark Peterson">Dr. Mark Peterson (Therapist)</option>
+                            <option value="Dr. Emily Chen">Dr. Emily Chen (Psychiatrist)</option>
+                            <option value="Dr. David Wright">Dr. David Wright (Counselor)</option>
+                            <option value="Dr. Lisa Gomez">Dr. Lisa Gomez (Wellness Coach)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-date">Date:</label>
+                        <input type="date" id="booking-date" required
+                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #E2E8F0; background-color: var(--bg-color); color: var(--text-color); font-family: inherit;">
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-email-input">Your Email:</label>
+                        <input type="email" id="booking-email-input" placeholder="We'll send a confirmation email here"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width" id="confirm-booking-btn"
+                        style="margin-top: 10px;">Confirm Appointment</button>
+                    <p id="booking-status-message"
+                        style="margin-top: 10px; display: none; text-align: center; font-weight: 500;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="music-modal" class="modal hidden">
+        <div class="modal-content music-modal-content">
+            <div class="modal-header">
+                <h3>Music Recommendations for Your Mood</h3>
+                <button class="close-btn" id="close-music"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body music-modal-body">
+                <ul id="song-list" class="song-list">
+                    <!-- Song cards will be injected here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>User Settings</h3>
+                <button class="close-btn" id="close-settings"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="user-name-input">Name:</label>
+                    <input type="text" id="user-name-input" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="user-avatar-input">Avatar URL:</label>
+                    <input type="text" id="user-avatar-input" placeholder="Enter avatar image URL">
+                </div>
+                <div class="form-group">
+                    <label for="user-plan-input">Plan:</label>
+                    <input type="text" id="user-plan-input" placeholder="Enter your plan">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancel-settings">Cancel</button>
+                <button class="btn btn-primary" id="save-settings">Save</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

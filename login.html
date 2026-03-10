@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MindCare AI - Login</title>
+    <link rel="stylesheet" href="simple.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>MindCare AI</h1>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label>Email:</label><br>
+                <input type="email" id="email" required>
+            </div>
+            <br>
+            <div>
+                <label>Password:</label><br>
+                <input type="password" id="password" required>
+            </div>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent page reload
+
+            const email = document.getElementById('email').value;
+            let name = email.split('@')[0];
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+
+            const userData = {
+                name: name,
+                email: email,
+                avatar: 'https://i.pravatar.cc/150?img=11',
+                plan: 'Premium Plan'
+            };
+            localStorage.setItem('mindcare_user', JSON.stringify(userData));
+
+            // Redirect to the background information page
+            window.location.href = 'background.html';
+        });
+    </script>
+</body>
+
+</html>
